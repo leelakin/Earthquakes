@@ -1,0 +1,165 @@
+$warn-hi1: #ff9980;
+$warn-hi2: #c00;
+$warn-hi3: #692716;
+
+$warn-med1: #fb3;
+$warn-med2: #960;
+$warn-med3: #664400;
+
+$warn-lo1: #ffffb3;
+$warn-lo2: #cca300;
+$warn-lo3: #997a00;
+
+$standard-border: 1px solid #999;
+
+@mixin warn($lvl) {
+
+	@if $lvl == "hi" {
+		color: $warn-hi3;
+		background-color: $warn-hi1;
+	}
+	@else if $lvl == "med" {
+		color: $warn-med3;
+		background-color: $warn-med1;
+	}
+	@else if $lvl == "lo" {
+		color: $warn-lo3;
+		background-color: $warn-lo1;
+	}
+	
+}
+
+@mixin standard-flex {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+body {
+	margin: 0;
+	background-color: #f2f2f2;
+	font: 1em Helvetica, sans-serif;
+	color: #666;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	width: 80%;
+	margin-left: 10%;
+
+	@media only screen and (max-width: 600px) {
+		width: 90%;
+		margin-left: 5%;
+	}
+	@media only screen and (max-width: 480px) {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	h1 {
+		text-align: center;
+		margin-bottom: 10px;
+		font-size: 4em;
+		.not {
+			color: #ccc;
+		}
+		@media only screen and (max-width: 800px) {
+			font-size: 3.4em;
+		}
+		@media only screen and (max-width: 640px) {
+			font-size: 2.4em;
+		}
+	}
+	.quakelist {
+		@include standard-flex;
+
+		.quakebox {
+			@include standard-flex;
+			align-items: center;
+			width: 120px;
+			height: 180px;
+			border: $standard-border;
+			border-radius: 5px;
+			margin: 5px;
+			padding: 5px;
+			text-align: center;
+			overflow: hidden;
+			opacity: 0.8;
+			&:hover, &:active, &:focus {
+				opacity: 1;
+			}
+				
+
+			&.lo {
+				@include warn("lo");
+				.magno {
+					color: $warn-lo2;
+					&:hover, &:active, &:focus {
+						opacity: 1;
+					  text-indent: -9999px;
+					  line-height: 0;
+					  &::after {
+						  content: "Meh";
+							font-size: 0.8em;
+						  text-indent: 0;
+						  display: block;
+						  line-height: initial;
+						}
+					}
+				}
+			}
+			&.med {
+				@include warn("med");
+				.magno {
+					color: $warn-med2;
+					&:hover, &:active, &:focus {
+						opacity: 1;
+					  text-indent: -9999px;
+					  line-height: 0;
+					  &::after {
+						  content: "Duck";
+							font-size: 0.8em;
+						  text-indent: 0;
+						  display: block;
+						  line-height: initial;
+						}
+					}
+				}
+			}
+			&.hi {
+				@include warn("hi");
+				.magno {
+					color: $warn-hi2;
+					&:hover, &:active, &:focus {
+						opacity: 1;
+					  text-indent: -9999px;
+					  line-height: 0;
+					  &::after {
+						  content: "RUN";
+							font-size: 0.8em;
+						  text-indent: 0;
+						  display: block;
+						  line-height: initial;
+						}
+					}
+				}
+			}
+
+			.magno {
+				display: block;
+				width: 100%;
+				font-size: 3.8em;
+			}
+
+			.prox {
+				font-size: 0.8em;
+			}
+
+			.place {
+				line-height: 90%;
+				font-size: 1.4em;
+			}
+		}
+
+	}
+}

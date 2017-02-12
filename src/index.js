@@ -1,15 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
-import reducers from './reducers';
+import AllData from './components/all_data';
+import QuakeList from './components/quake_list';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+//App is all the other components' parent component
+class App extends Component {
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+	constructor (props) {
+		super(props);
+
+		this.state = {
+			quakeData: null,
+		}
+	}
+
+	componentWillMount() {
+		this.setState({quakeData: AllData()});
+	}
+
+	render() {
+
+		return (
+			<div>
+				<h1>Where <span className="not">not</span> to travel</h1>
+				<QuakeList quakes={this.state.quakeData} />
+			</div>
+			
+		);
+	}
+};
+
+//render to dom
+ReactDOM.render(<App/>, document.querySelector('.wrapper'));

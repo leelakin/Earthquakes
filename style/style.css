@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  background-color: #f2f2f2;
+  font: 1em Helvetica, sans-serif;
+  color: #666;
+  box-sizing: border-box; }
+
+.wrapper {
+  width: 80%;
+  margin-left: 10%; }
+  @media only screen and (max-width: 600px) {
+    .wrapper {
+      width: 90%;
+      margin-left: 5%; } }
+  @media only screen and (max-width: 480px) {
+    .wrapper {
+      width: 100%;
+      margin-left: 0; } }
+  .wrapper h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 4em; }
+    .wrapper h1 .not {
+      color: #ccc; }
+    @media only screen and (max-width: 800px) {
+      .wrapper h1 {
+        font-size: 3.4em; } }
+    @media only screen and (max-width: 640px) {
+      .wrapper h1 {
+        font-size: 2.4em; } }
+  .wrapper .quakelist {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .wrapper .quakelist .quakebox {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 120px;
+      height: 180px;
+      border: 1px solid #999;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      overflow: hidden;
+      opacity: 0.8; }
+      .wrapper .quakelist .quakebox:hover, .wrapper .quakelist .quakebox:active, .wrapper .quakelist .quakebox:focus {
+        opacity: 1; }
+      .wrapper .quakelist .quakebox.lo {
+        color: #997a00;
+        background-color: #ffffb3; }
+        .wrapper .quakelist .quakebox.lo .magno {
+          color: #cca300; }
+          .wrapper .quakelist .quakebox.lo .magno:hover, .wrapper .quakelist .quakebox.lo .magno:active, .wrapper .quakelist .quakebox.lo .magno:focus {
+            opacity: 1;
+            text-indent: -9999px;
+            line-height: 0; }
+            .wrapper .quakelist .quakebox.lo .magno:hover::after, .wrapper .quakelist .quakebox.lo .magno:active::after, .wrapper .quakelist .quakebox.lo .magno:focus::after {
+              content: "Meh";
+              font-size: 0.8em;
+              text-indent: 0;
+              display: block;
+              line-height: initial; }
+      .wrapper .quakelist .quakebox.med {
+        color: #664400;
+        background-color: #fb3; }
+        .wrapper .quakelist .quakebox.med .magno {
+          color: #960; }
+          .wrapper .quakelist .quakebox.med .magno:hover, .wrapper .quakelist .quakebox.med .magno:active, .wrapper .quakelist .quakebox.med .magno:focus {
+            opacity: 1;
+            text-indent: -9999px;
+            line-height: 0; }
+            .wrapper .quakelist .quakebox.med .magno:hover::after, .wrapper .quakelist .quakebox.med .magno:active::after, .wrapper .quakelist .quakebox.med .magno:focus::after {
+              content: "Duck";
+              font-size: 0.8em;
+              text-indent: 0;
+              display: block;
+              line-height: initial; }
+      .wrapper .quakelist .quakebox.hi {
+        color: #692716;
+        background-color: #ff9980; }
+        .wrapper .quakelist .quakebox.hi .magno {
+          color: #c00; }
+          .wrapper .quakelist .quakebox.hi .magno:hover, .wrapper .quakelist .quakebox.hi .magno:active, .wrapper .quakelist .quakebox.hi .magno:focus {
+            opacity: 1;
+            text-indent: -9999px;
+            line-height: 0; }
+            .wrapper .quakelist .quakebox.hi .magno:hover::after, .wrapper .quakelist .quakebox.hi .magno:active::after, .wrapper .quakelist .quakebox.hi .magno:focus::after {
+              content: "RUN";
+              font-size: 0.8em;
+              text-indent: 0;
+              display: block;
+              line-height: initial; }
+      .wrapper .quakelist .quakebox .magno {
+        display: block;
+        width: 100%;
+        font-size: 3.8em; }
+      .wrapper .quakelist .quakebox .prox {
+        font-size: 0.8em; }
+      .wrapper .quakelist .quakebox .place {
+        line-height: 90%;
+        font-size: 1.4em; }
+
+/*# sourceMappingURL=style.css.map */
