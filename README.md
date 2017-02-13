@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# Earthquakes
 
 webpack config by Stephen Grider on GitHub
 
